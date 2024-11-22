@@ -7,9 +7,9 @@ function App() {
   const [error, setError] = useState<null | string>(null);
 
   useEffect(() => {
-    fetch(`https://jsonplaceholder.typicode.com/posts`)
+    fetch(`https://jsonplaceholder.typicode.com/pots`)
       .then((res) => {
-        if (!res.ok) throw new Error(`Data fetching failed`);
+        if (!res.ok) throw new Error();
         return res.json();
       })
       .then((data) => {
@@ -25,7 +25,9 @@ function App() {
           })
         );
       })
-      .catch((err) => setError(`Data fetching failed`));
+      .catch(() => {
+        setError(`Data fetching failed`);
+      });
   }, []);
 
   return (
