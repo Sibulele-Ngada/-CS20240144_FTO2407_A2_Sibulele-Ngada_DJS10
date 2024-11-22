@@ -16,6 +16,10 @@
   text-align: center;
 }
 
+ol {
+  list-style-type: none;
+}
+
 a {
   font-weight: 500;
   color: #646cff;

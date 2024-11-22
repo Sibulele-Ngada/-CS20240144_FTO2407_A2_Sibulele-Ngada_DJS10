@@ -15,10 +15,10 @@ function App() {
       .then((data) => {
         setError(null);
         setPosts(
-          data.map((post: Post) => {
+          data.map((post: Post, index: number) => {
             return (
               <li key={post.id}>
-                <h3>{post.title}</h3>
+                <h3>{`${index + 1}. ${post.title}`}</h3>
                 <p>{post.body}</p>
               </li>
             );
