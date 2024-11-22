@@ -7,7 +7,7 @@ function App() {
   const [error, setError] = useState<null | string>(null);
 
   useEffect(() => {
-    fetch(`https://jsonplaceholder.typicode.com/pots`)
+    fetch(`https://jsonplaceholder.typicode.com/posts`)
       .then((res) => {
         if (!res.ok) throw new Error();
         return res.json();
