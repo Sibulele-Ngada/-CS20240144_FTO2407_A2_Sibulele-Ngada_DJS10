@@ -11,9 +11,6 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  display: flex;
-  justify-content: center;
-  text-align: center;
 }
 
 ol {
@@ -35,6 +32,9 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  text-align: center;
 }
 
 h1 {
