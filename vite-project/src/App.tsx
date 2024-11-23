@@ -8,22 +8,23 @@ function App() {
   const [error, setError] = useState<null | string>(null);
   const [loading, setLoading] = useState(false);
 
-  //
+  // Load posts
   useEffect(() => {
     setLoading(true);
 
-    fetch(`https://jsonplaceholder.typicode.com/pots`)
+    fetch(`https://jsonplaceholder.typicode.com/posts`)
       .then((res) => {
         if (!res.ok) throw new Error();
         return res.json();
       })
       .then((data) => {
-        setError(null);
+        setError(null); // Reset error state
+
         setPosts(
-          data.map((post: Post, index: number) => {
+          data.map((post: Post) => {
             return (
               <li key={post.id}>
-                <h3>{`${index + 1}. ${post.title}`}</h3>
+                <h3>{`${post.id}. ${post.title}`}</h3>
                 <p>{post.body}</p>
               </li>
             );
@@ -32,7 +33,7 @@ function App() {
       })
       .catch(() => {
         setError(`Data fetching failed`);
-        setPosts(null);
+        setPosts(null); // Clear posts in event of error
       })
       .finally(() => {
         setLoading(false);
